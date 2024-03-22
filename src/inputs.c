@@ -84,7 +84,8 @@ void input_desktop(struct desktop* target)
 	target->len = 0;
 
 	input_desktop_add(target, strdup(lang.shell), strdup(""), DS_SHELL);
-	input_desktop_add(target, strdup(lang.xinitrc), strdup(config.xinitrc), DS_XINITRC);
+	//input_desktop_add(target, strdup(lang.xinitrc), strdup(config.xinitrc), DS_XINITRC);
+	input_desktop_add(target, strdup(lang.dwl), strdup(config.dwl), DS_DWL);
 #if 0
 	input_desktop_add(target, strdup(lang.wayland), strdup(""), DS_WAYLAND);
 #endif

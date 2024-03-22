@@ -5,7 +5,7 @@
 
 #include <stdint.h>
 
-enum display_server {DS_WAYLAND, DS_SHELL, DS_XINITRC, DS_XORG};
+enum display_server {DS_WAYLAND, DS_SHELL, DS_XINITRC, DS_XORG, DS_DWL};
 
 struct text
 {

@@ -254,6 +254,11 @@ void env_xdg_session(const enum display_server display_server)
 			setenv("XDG_SESSION_TYPE", "x11", 0);
 			break;
 		}
+		case DS_DWL:
+		{
+			setenv("XDG_SESSION_TYPE", "wayland", 1);
+			break;
+		}
 	}
 }
 
@@ -663,6 +668,11 @@ void auth(
 			case DS_XORG:
 			{
 				xorg(pwd, vt, desktop->cmd[desktop->cur]);
+				break;
+			}
+			case DS_DWL:
+			{
+				wayland(pwd, desktop->cmd[desktop->cur]);
 				break;
 			}
 		}

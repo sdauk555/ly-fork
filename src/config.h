@@ -57,6 +57,7 @@ struct lang
 	char* shutdown;
 	char* wayland;
 	char* xinitrc;
+	char* dwl;
 };
 
 struct config
@@ -99,6 +100,7 @@ struct config
 	char* waylandsessions;
 	char* x_cmd;
 	char* xinitrc;
+	char* dwl;
 	char* x_cmd_setup;
 	char* xauth_cmd;
 	char* xsessions;

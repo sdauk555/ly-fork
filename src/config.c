@@ -122,6 +122,7 @@ void lang_load()
 		{"shutdown", &lang.shutdown, lang_handle},
 		{"wayland", &lang.wayland, lang_handle},
 		{"xinitrc", &lang.xinitrc, lang_handle},
+		{"dwl", &lang.dwl, lang_handle},
 	};
 
 	uint16_t map_len[] = {45};
@@ -195,6 +196,7 @@ void config_load(const char *cfg_path)
 		{"waylandsessions", &config.waylandsessions, config_handle_str},
 		{"x_cmd", &config.x_cmd, config_handle_str},
 		{"xinitrc", &config.xinitrc, config_handle_str},
+		{"dwl", &config.dwl, config_handle_str},
 		{"x_cmd_setup", &config.x_cmd_setup, config_handle_str},
 		{"xauth_cmd", &config.xauth_cmd, config_handle_str},
 		{"xsessions", &config.xsessions, config_handle_str},
@@ -265,6 +267,7 @@ void lang_defaults()
 	lang.shutdown = strdup("shutdown");
 	lang.wayland = strdup("wayland");
 	lang.xinitrc = strdup("xinitrc");
+	lang.dwl = strdup("dwl");
 }
 
 void config_defaults()
@@ -307,6 +310,7 @@ void config_defaults()
 	config.waylandsessions = strdup("/usr/share/wayland-sessions");
 	config.x_cmd = strdup("/usr/bin/X");
 	config.xinitrc = strdup("~/.xinitrc");
+	config.dwl = strdup("/usr/local/bin/dwl");
 	config.x_cmd_setup = strdup(DATADIR "/xsetup.sh");
 	config.xauth_cmd = strdup("/usr/bin/xauth");
 	config.xsessions = strdup("/usr/share/xsessions");
@@ -359,6 +363,7 @@ void lang_free()
 	free(lang.shutdown);
 	free(lang.wayland);
 	free(lang.xinitrc);
+	free(lang.dwl);
 }
 
 void config_free()
@@ -379,6 +384,7 @@ void config_free()
 	free(config.waylandsessions);
 	free(config.x_cmd);
 	free(config.xinitrc);
+	free(config.dwl);
 	free(config.x_cmd_setup);
 	free(config.xauth_cmd);
 	free(config.xsessions);
